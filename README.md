@@ -1,34 +1,37 @@
-# Learnify starter
+# LearnifyNG
 
-A self-contained, responsive Learnify MVP prototype. It has a complete demo journey from a user question through intelligence, evidence, verification, AI advisory, human advisory, comparison, and final decision.
+A self contained responsive LearnifyNG MVP prototype for local intelligence, evidence, verification, AI advisory, human advisory, comparison, and decision support.
 
 ## Open locally
 
 Open `index.html` in a browser. No build tooling is required.
 
-## Moving it into Lovable
+## Current status
 
-Use this as the visual and interaction baseline. The prototype routes are hash-based (`#ask`, `#intelligence`, `#evidence`, `#advisory`, `#compare`, and `#decision`) so it requires no server.
+This repository is a frontend demo. The local intelligence, evidence, contributor activity, verification states, advisor guidance, and decision records shown in the demo are illustrative data. No real investigation, contribution, verification, or AI call is created by this prototype.
 
-All Jabi records, dates, evidence, verification states, contributor counts, and advisor content are clearly labelled illustrative **demo data**. Replace them with authenticated, auditable records before releasing.
+## Demo journey
 
-### Essential product data model
+1. Ask a local question
+2. Review local intelligence
+3. Inspect evidence and verification
+4. Compare AI advisory and human advisory
+5. Compare options and tradeoffs
+6. Save a demo decision
+7. See how community actions are handled without pretending a real contribution was created
 
-- `questions`: prompt, location, category, urgency, status, requester
-- `intelligence_records`: claim, location, confidence, status, expiry
-- `evidence`: record, type, source, date, location, submitter, verification status
-- `verifications`: evidence/claim, reviewer, outcome, notes
-- `contributions`: user, question, type (answer/confirm/dispute/evidence), reputation effect
-- `comparisons`: question, selected options, criteria, recommendation
+## Product model
 
-### Non-negotiable UI rule
+The intended LearnifyNG decision flow is:
 
-Every result page must explicitly separate **Fact**, **Evidence**, **Verification**, **Analysis**, **Advisory**, and **Decision**. This prevents an AI explanation from appearing as a verified observation.
+User → Local Intelligence → Evidence → Verification → AI Analysis → Human Advisory → Comparison → Decision
 
-### Recommended implementation order
+Every result should clearly separate Fact, Evidence, Verification, Analysis, Advisory, and Decision.
 
-1. Home and Ask Question flow
-2. Question Detail + evidence submission / confirmation
-3. Intelligence Results with the six-layer trust model
-4. Community/open requests and user dashboard
-5. Advisory, comparison, verification queue, and admin areas
+## Moving into a production build
+
+Use this prototype as the visual and interaction baseline. The production version should replace illustrative records with authenticated, auditable data, connect a real data store, add real AI analysis, add real human advisor workflows, preserve evidence provenance, handle conflicting reports explicitly, and track freshness for time sensitive intelligence.
+
+## Important
+
+Do not present the demo records as real world research. They exist only to demonstrate the product experience and information architecture.
