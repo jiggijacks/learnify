@@ -18,9 +18,9 @@
     </a>
 
     <nav aria-label="Main navigation">
-      <a href="#how-it-works">How it works</a>
-      <a href="#open-intelligence">Community</a>
-      <a href="#advisory">Advisory</a>
+      <a href="#how-it-works" data-scroll="how-it-works">How it works</a>
+      <a href="#open-intelligence" data-scroll="open-intelligence">Community</a>
+      <a href="#advisory" data-scroll="advisory">Advisory</a>
     </nav>
 
     <div class="header-actions">
@@ -456,6 +456,96 @@
       <button class="button button-light" data-scroll="ask">
         Ask LearnifyNG <span>→</span>
       </button>
+
+    </section>
+
+
+    <section id="mvp" hidden>
+
+      <div id="ask-view" class="view mvp-view">
+        <div class="page-hero">
+          <div class="section-wrap compact">
+            <span class="demo-pill">DEMO WORKFLOW</span>
+            <h1>Start with the question.</h1>
+            <p>Tell Learnify what you are trying to decide. The demo will take you through the same decision journey a real investigation would follow.</p>
+          </div>
+        </div>
+        <div class="section-wrap ask-layout">
+          <div class="ask-card">
+            <label for="ask-question">What are you trying to decide?</label>
+            <textarea id="ask-question" placeholder="e.g. Which network works best around Jabi?"></textarea>
+            <div class="form-grid">
+              <label>Area<input id="ask-area" value="Jabi, Abuja" /></label>
+              <label>Priority<select id="ask-priority"><option>Reliability</option><option>Value</option><option>Lowest cost</option></select></label>
+            </div>
+            <p class="demo-note">DEMO ONLY · No real investigation is created.</p>
+            <button class="button" id="run-question" type="button">Review local intelligence <span>→</span></button>
+          </div>
+          <aside class="journey-panel">
+            <span class="mini-label">Your decision journey</span>
+            <ol>
+              <li class="current">Ask</li><li>Local Intelligence</li><li>Evidence</li><li>Verification</li><li>Advisory</li><li>Comparison</li><li>Decision</li>
+            </ol>
+          </aside>
+        </div>
+      </div>
+
+      <div id="intelligence-view" class="view mvp-view">
+        <div class="page-hero"><div class="section-wrap compact"><span class="demo-pill">01 · LOCAL INTELLIGENCE</span><h1>Here is what we found.</h1><p id="intelligence-question">Your question</p></div></div>
+        <div class="section-wrap">
+          <div class="progress"><button class="active" data-route="intelligence">Intelligence</button><button data-route="evidence">Evidence</button><button data-route="verification">Verification</button><button data-route="advisory">Advisory</button><button data-route="compare">Comparison</button><button data-route="decision">Decision</button></div>
+          <div class="results-heading"><div><span class="mini-label">Demo local intelligence</span><h2>Three options surfaced for Jabi.</h2></div><span class="confidence high">Signal available · demo data</span></div>
+          <div id="record-list" class="record-list"></div>
+          <div class="next-step"><div><span class="mini-label">NEXT</span><h3>Inspect the evidence behind these results.</h3></div><button class="button" data-route="evidence">See evidence <span>→</span></button></div>
+        </div>
+      </div>
+
+      <div id="evidence-view" class="view mvp-view">
+        <div class="page-hero"><div class="section-wrap compact"><span class="demo-pill">02 · EVIDENCE</span><h1>See what supports each claim.</h1><p>Learnify keeps the claim, evidence and interpretation separate so you can inspect the reasoning.</p></div></div>
+        <div class="section-wrap evidence-layout">
+          <aside class="record-selector"><span class="mini-label">Select a record</span><button data-record="mtn" class="selected">MTN</button><button data-record="airtel">Airtel</button><button data-record="glo">Glo</button></aside>
+          <div><div id="record-detail"></div><div class="next-step"><div><span class="mini-label">NEXT</span><h3>Check how the evidence was verified.</h3></div><button class="button" data-route="verification">Review verification <span>→</span></button></div></div>
+        </div>
+      </div>
+
+      <div id="verification-view" class="view mvp-view">
+        <div class="page-hero"><div class="section-wrap compact"><span class="demo-pill">03 · VERIFICATION</span><h1>Trust is earned, not assumed.</h1><p>Verification tells you what was checked, what remains uncertain, and how strong the demo signal is.</p></div></div>
+        <div class="section-wrap ask-layout">
+          <div class="ask-card">
+            <span class="mini-label">Verification summary</span>
+            <h2>MTN · Demo verified</h2>
+            <p>Method: internal consistency review across illustrative demo records.</p>
+            <div class="record-meta"><span><b>Evidence</b>9 demo items</span><span><b>Contributors</b>7 demo confirmations</span><span><b>Confidence</b>High (demo)</span><span><b>Freshness</b>September 2026 demo</span></div>
+            <p class="demo-note">This does not represent a real-world verification process.</p>
+            <button class="button" data-route="advisory">Understand the result <span>→</span></button>
+          </div>
+          <aside class="journey-panel"><span class="mini-label">Decision journey</span><ol><li>Ask</li><li>Local Intelligence</li><li>Evidence</li><li class="current">Verification</li><li>Advisory</li><li>Comparison</li><li>Decision</li></ol></aside>
+        </div>
+      </div>
+
+      <div id="advisory-view" class="view mvp-view">
+        <div class="page-hero"><div class="section-wrap compact"><span class="demo-pill">04 · ADVISORY</span><h1>Now make sense of it.</h1><p>Advisory turns the verified signal into guidance while keeping analysis and advice clearly separated.</p></div></div>
+        <div class="section-wrap advisory-grid">
+          <article class="advisory-card ai"><div class="advisory-head"><span class="icon blue">✦</span><div><span class="mini-label">AI ADVISORY · DEMO</span><h2>What the signal suggests</h2></div></div><div class="advice-section"><b>Analysis</b><p>Consistent sample performance makes MTN the lower-risk option for home use in this illustrative scenario.</p></div><div class="advice-section"><b>Best fit</b><p>Reliable video calls and consistency are the priority.</p></div><div class="advice-section risks"><b>Tradeoff</b><p>Higher price than the other demo options.</p></div></article>
+          <article class="advisory-card human"><div class="advisory-head"><span class="icon gold">◎</span><div><span class="mini-label">HUMAN ADVISORY · DEMO</span><h2>How a person might frame it</h2></div></div><blockquote>“If reliability matters more than saving a little money, MTN is the safer demo choice.”</blockquote><div class="human-meta"><span>Advisor role<br><b>Demo reviewer</b></span><span>Basis<br><b>Illustrative evidence</b></span></div><p>This is illustrative guidance, not advice from a real advisor.</p></article>
+          <div class="next-step" style="grid-column:1/-1"><div><span class="mini-label">NEXT</span><h3>Compare the options and tradeoffs side by side.</h3></div><button class="button" data-route="compare">Compare options <span>→</span></button></div>
+        </div>
+      </div>
+
+      <div id="compare-view" class="view mvp-view">
+        <div class="page-hero"><div class="section-wrap compact"><span class="demo-pill">05 · COMPARISON</span><h1>Compare before you decide.</h1><p>Instead of one generic rating, see the tradeoffs that matter to this specific question.</p></div></div>
+        <div class="section-wrap compact"><div class="comparison-wrap"><table><thead><tr><th>Factor</th><th>MTN <small>Demo</small></th><th>Airtel <small>Demo</small></th><th>Glo <small>Demo</small></th></tr></thead><tbody id="comparison-table"></tbody></table></div><div class="choose-option"><div><span class="mini-label">Choose your demo option</span><h3 id="selected-option">MTN selected</h3><p>Your choice will shape the final demo decision summary.</p></div><div class="option-buttons"><button class="option-select selected" data-option="MTN">MTN</button><button class="option-select" data-option="Airtel">Airtel</button><button class="option-select" data-option="Glo">Glo</button></div></div><div class="next-step"><div><span class="mini-label">NEXT</span><h3>See the decision summary.</h3></div><button class="button" data-route="decision">View decision <span>→</span></button></div></div>
+      </div>
+
+      <div id="decision-view" class="view mvp-view">
+        <div class="decision-hero"><span class="demo-pill">06 · DEMO DECISION</span><h1 id="decision-title">MTN is the recommended fit.</h1><p id="decision-copy">Best fit when reliability is the main priority.</p><button class="button button-light" id="save-decision">Save demo decision <span>→</span></button><p id="saved-status" class="demo-note" aria-live="polite"></p></div>
+        <div class="section-wrap"><div class="decision-grid"><article><span class="mini-label">WHY</span><h3>Reliability is the priority.</h3><p>The selected option has the strongest illustrative consistency in this scenario.</p></article><article class="risk-card"><span class="mini-label">TRADEOFF</span><h3>Higher price.</h3><p>The demo comparison shows cost as the main downside.</p></article><article class="final-confidence"><span class="mini-label">DECISION · CONFIDENCE</span><strong id="decision-confidence">Demo: high</strong><p>Based on illustrative intelligence only.</p></article></div><div class="next-step"><div><span class="mini-label">END OF DEMO</span><h3>Return to the Learnify homepage.</h3></div><button class="button" data-route="home">Back to Learnify <span>→</span></button></div></div>
+      </div>
+
+      <div id="community-view" class="view mvp-view">
+        <div class="page-hero"><div class="section-wrap compact"><span class="demo-pill">COMMUNITY · DEMO</span><h1>Local questions need local experience.</h1><p>Community participation is part of the intended Learnify workflow. This prototype does not create a real contribution.</p></div></div>
+        <div class="section-wrap compact"><div class="open-card" style="color:var(--ink);background:#fff"><div class="card-top"><span class="status" style="color:#287b65"><i></i> Demo investigation</span></div><h3>Which ISP is most reliable around Jabi?</h3><p style="color:#62706a">12 demo contributors · 7 demo confirmations</p><button class="button" data-route="ask">Ask your own question <span>→</span></button></div></div>
+      </div>
 
     </section>
 
